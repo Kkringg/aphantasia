@@ -147,6 +147,7 @@ def resume_fft(resume=None, shape=None, decay=None, colors=1.6, sd=0.01):
     else:
         if isinstance(resume, list): resume = resume[0]
         params = resume.cuda()
+    save_image(params,"params_example.png")    
     return params, size
 
 def fft_image(shape, sd=0.01, decay_power=1.0, resume=None): # decay ~ blur
