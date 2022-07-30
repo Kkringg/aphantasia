@@ -8,6 +8,8 @@ from pytorch_wavelets import DWTForward, DWTInverse
 
 import torch
 
+from torchvision.utils import save_image
+
 from aphantasia.utils import slice_imgs, derivat, sim_func, basename, img_list, img_read, plot_text, old_torch
 from aphantasia.transforms import normalize
 
