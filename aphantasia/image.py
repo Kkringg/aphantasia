@@ -137,6 +137,7 @@ def resume_fft(resume=None, shape=None, decay=None, colors=1.6, sd=0.01):
     elif isinstance(resume, str):
         if os.path.isfile(resume):
             if os.path.splitext(resume)[1].lower()[1:] in ['jpg','png','tif','bmp']:
+                print("os.path.splitext was true.")
                 img_in = img_read(resume)
                 params = img2fft(img_in, decay, colors)
                 size = img_in.shape[:2]
@@ -144,7 +145,7 @@ def resume_fft(resume=None, shape=None, decay=None, colors=1.6, sd=0.01):
                 params = torch.load(resume)
                 if isinstance(params, list): params = params[0]
                 params = params.detach().cuda()
-            # params *= sd
+            params *= sd
         else: print(' Snapshot not found:', resume); exit()
     else:
         if isinstance(resume, list): resume = resume[0]
