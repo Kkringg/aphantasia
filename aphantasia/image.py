@@ -142,6 +142,7 @@ def resume_fft(resume=None, shape=None, decay=None, colors=1.6, sd=0.01):
                 params = img2fft(img_in, decay, colors)
                 size = img_in.shape[:2]
             else:
+                print("Calling torch.load.")
                 params = torch.load(resume)
                 if isinstance(params, list): params = params[0]
                 params = params.detach().cuda()
