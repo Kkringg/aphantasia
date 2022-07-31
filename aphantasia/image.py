@@ -154,7 +154,7 @@ def resume_fft(resume=None, shape=None, decay=None, colors=1.6, sd=0.01):
 def fft_image(shape, sd=0.01, decay_power=1.0, resume=None): # decay ~ blur
 
     params, size = resume_fft(resume, shape, decay_power, sd=sd)
-    save_image(params, "params_example.png")  
+    # save_image(params, "params_example.png")  
     spectrum_real_imag_t = params.requires_grad_(True)
     if size is not None: shape[2:] = size
     [h,w] = list(shape[2:])
