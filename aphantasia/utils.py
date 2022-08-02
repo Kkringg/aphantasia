@@ -64,8 +64,8 @@ def img_read(path):
     if (img.ndim == 2) or (img.shape[2] == 1):
         img = np.dstack((img,img,img))
     # rgba to rgb
-    if img.shape[2] == 4:
-        img = img[:,:,:3]
+    #if img.shape[2] == 4:
+    #    img = img[:,:,:3]
     return img
     
 def img_save(path, img, norm=True):
